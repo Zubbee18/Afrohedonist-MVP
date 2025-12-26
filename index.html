@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" type="text/css">
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"> -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Afrohedonist - Celebrate Your Culture</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar" aria-label="Primary">
+            <div class="nav-logo">
+                <!-- Displays the logo or name of the website -->
+                <span>Afrohedonist</span>
+            </div>
+            
+            <!-- Hamburger Toggle Button for mobile navigation -->
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#demo">How it works</a></li>
+                <li><a href="#features">Features</a></li>
+                <!-- <li><a href="#demo">About</a></li> -->
+                <li><a href="#cta">Contact</a></li>
+            </ul>
+
+            <button class="btn nav-btn" type="button">Get started ></button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <h1>Celebrate. Connect. Thrive.</h1>
+            <p>More experiences, less “I don’t know what to do”. Discover authentic experiences that honor your heritage and culture. Get afro-centric ideas on what, where, who and how with just a message.</p>
+            <div class="button-group">
+                <button class="btn btn-primary" type="button">Get started</button>
+                <button class="btn btn-secondary" type="button">Learn more</button>
+            </div>
+        </section>
+
+        <!-- DEMO SECTION -->
+        <section class="demo-section" id="demo">
+            <div class="demo-content">
+                <h2>How it works</h2>
+                <video controls autoplay muted loop>
+                    <source src="./Afrohedonist Demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Simply send a message to Afrohedonist with your preferences and we'll match you with the perfect cultural experience.</p>
+            </div>
+        </section>        
+
+        <!-- KEY features SECTION -->
+        <section class="features-section" id="feature">
+            <h2>Why Afrohedonist</h2>
+            <div class="features-grid">
+                <!-- Individual feature cards -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3>Authentic Experiences</h3>
+                    <p>Curated events and spaces that celebrate your culture with intention and pride.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Real Community</h3>
+                    <p>Connect with like-minded individuals who share your values and passion.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Pure Joy</h3>
+                    <p>Experience moments of pure happiness without compromise or apology.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Movement</h3>
+                    <p>Be part of a growing community making culture celebration mainstream.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMISE SECTION -->
+        <section class="promise-section">
+            <h2>Our Promise</h2>
+            <!-- Description of the promise made by the platform -->
+            <p>We create intentional spaces where culture is celebrated, connections are genuine, and joy is non-negotiable. Afrohedonist is your gateway to experiences that feel like home.</p>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section" id="cta">
+            <h2>Ready to Celebrate?</h2>
+            <p>Join thousands discovering the joy of authentic cultural experiences</p>
+            <!-- Call to action button -->
+            <button class="btn btn-primary btn-large">Join the Movement</button>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Afrohedonist</h4>
+                <ul>
+                    <!-- Footer navigation links -->
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#demo">How it works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#cta">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <!-- Copyright notice -->
+            <p>&copy; 2025 Afrohedonist. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle with accessibility and safety checks
+        const hamburger = document.getElementById('hamburger'); // Get the hamburger button
+        const navLinks = document.getElementById('navLinks'); // Get the navigation links
+
+        if (hamburger && navLinks) {
+            // Add click event to toggle the mobile menu
+            hamburger.addEventListener('click', function() {
+                const opened = navLinks.classList.toggle('active'); // Toggle the active class
+                hamburger.classList.toggle('active'); // Toggle the hamburger button state
+                hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false'); // Update aria attribute for accessibility
+            });
+
+            // Close the menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active'); // Remove active class from nav links
+                    hamburger.classList.remove('active'); // Remove active class from hamburger
+                    hamburger.setAttribute('aria-expanded', 'false'); // Update aria attribute
+                });
+            });
+
+            // Close the menu when the Escape key is pressed
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    navLinks.classList.remove('active'); // Remove active class from nav links
+                    hamburger.classList.remove('active'); // Remove active class from hamburger
+                    hamburger.setAttribute('aria-expanded', 'false'); // Update aria attribute
+                }
+            });
+        }
+    </script>
+</body>
+<!--
+    FILE: index.html
+    DESCRIPTION: 
+    This is the main entry point HTML file for the Afrohedonist MVP (Minimum Viable Product) project.
+    It likely contains the basic structure and layout of the web application's home page.
+    
+    LOCATION: 
+    C:/Users/zubbe/Documents/Projects/Spurt! Projects/Afrohedonist MVP/
+    
+    NOTE: The closing </html> tag appears to be present, indicating this is the end of an HTML document.
+-->
+</html>

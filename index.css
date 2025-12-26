@@ -1,0 +1,533 @@
+/* ============ RESET & BASE STYLES ============ */
+/* Remove default margins and padding from all elements */
+/* To reverse: Add back margin/padding to individual elements as needed */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the default font family for the entire page */
+/* To reverse: Change font-family to a different font like Arial, Georgia, etc. */
+body {
+    font-style: normal;
+    font-weight: 300;
+    font-family: "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-display: optional;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ============ DESIGN TOKENS (COLOR VARIABLES) ============ */
+/* These are like shortcuts for colors used throughout the site */
+/* To reverse: Change the hex color codes to different colors */
+:root {
+    --bg: #f9f9f9;           /* Light gray background */
+    --surface: #ffffff;      /* White for cards and surfaces */
+    --text: #333333;         /* Dark gray for text */
+    --muted: #666666;        /* Medium gray for secondary text */
+    --accent: #006B3D;       /* Green - primary brand color */
+    --accent-strong: #009051; /* Darker green - hover states */
+    --shadow: rgba(0,0,0,0.08); /* Subtle shadow */
+    --focus-ring: rgba(0,102,68,0.25); /* Semi-transparent green for focus */
+}
+
+/* Apply the background color variable to body */
+/* To reverse: Set background-color to #f9f9f9 directly instead */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* ============ NAVBAR/HEADER ============ */
+/* The sticky header that stays at the top */
+/* To reverse: Remove 'sticky' and 'position' to make it scroll with page */
+header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow below header */
+    position: sticky; /* Stays at top when scrolling */
+    top: 0;
+    z-index: 1000; /* Keeps header above other content */
+}
+
+/* Grid layout for navbar - 3 columns: logo, middle space, buttons */
+/* To reverse: Change to 'display: flex' for a simpler row layout */
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center; /* Vertically centers all items */
+    gap: 1rem; /* Space between items */
+    padding: 1rem 2rem; /* Space inside the navbar */
+    width: 100%;
+    position: relative;
+}
+
+/* Logo positioning - pushed to the left */
+/* To reverse: Remove 'justify-self: start' to center it */
+.nav-logo {
+    justify-self: start;
+    height: auto;
+    width: fit-content; /* Takes up only needed width */
+}
+
+/* Logo text styling */
+.nav-logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+/* "Join Now" button positioning - pushed to the right */
+/* To reverse: Remove 'justify-self: end' */
+.nav-btn {
+    justify-self: end;
+}
+
+/* Navigation links list - removes bullet points */
+/* To reverse: Set 'list-style: disc' to show bullets */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Displays items horizontally */
+    justify-content: center;
+    gap: 2rem; /* Space between nav items */
+}
+
+
+/* Styling for navigation links */
+/* To reverse: Remove 'text-decoration: none' to show underlines */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+    padding: 0.5rem 0;
+}
+
+/* Link color change on hover */
+/* To reverse: Remove this rule to remove hover effect */
+.nav-links a:hover {
+    /* color: var(--accent); Changes to green on hover */
+    background-color: #f6f1f1;
+    padding: 7px;
+    border-radius: 4px;
+}
+
+/* Styling for "Join Now" button */
+/* To reverse: Change background-color to 'transparent' */
+.nav-btn {
+    background-color: var(--accent);
+    color: var(--surface);
+    border: none; /* Removes button border */
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Hand cursor on hover */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Keeps text on one line */
+    flex: 0 0 auto;
+}
+
+/* Button hover effect - gets darker */
+/* To reverse: Remove this rule */
+.nav-btn:hover {
+    background-color: var(--accent-strong);
+}
+
+/* Hamburger menu - hidden on desktop */
+/* To reverse: Change 'display: none' to 'display: flex' */
+.hamburger {
+    display: none;
+    flex-direction: column; /* Stacks the bars vertically */
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px; /* Space between bars */
+}
+
+/* The three horizontal lines in the hamburger */
+/* To reverse: Change height/width for different sized hamburger */
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px; /* Slightly rounded edges */
+    transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* Keyboard focus style for accessibility */
+/* To reverse: Remove this rule */
+.nav-links a:focus-visible,
+.nav-btn:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* Hamburger animation - first line rotates up */
+/* To reverse: Remove this rule */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+/* Hamburger animation - middle line disappears */
+/* To reverse: Change opacity to 1 */
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Hamburger animation - third line rotates down */
+/* To reverse: Remove this rule */
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============ MAIN CONTENT ============ */
+/* Container for all main content */
+/* To reverse: Remove 'max-width' to make it full width */
+main {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the content */
+    padding: 2rem; /* Space around content */
+}
+
+/* ============ HERO SECTION ============ */
+/* The large banner section at the top */
+.hero {
+    text-align: center; /* Centers all text */
+    padding: 3rem 0; /* Space top and bottom */
+    margin-bottom: 3rem;
+}
+
+/* Hero heading styling */
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a; /* Very dark color */
+}
+
+/* Hero paragraph styling */
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Container for buttons below hero text */
+/* To reverse: Change 'flex-direction: row' to 'column' */
+.button-group {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    justify-content: center;
+}
+
+/* ============ BUTTONS ============ */
+/* Base button styling - applies to all buttons */
+.btn {
+    padding: 0.75rem 1.5rem; /* Inside spacing */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Smooth animation on hover */
+    font-family: "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-display: optional;
+}
+
+.btn:hover {
+    background-color: var(--accent-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,102,68,0.18);
+}
+
+.btn:active {
+    transform: translateY(0); /* Back to normal position */
+}
+
+/* Green button - primary action */
+/* To reverse: Change background-color to white */
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--surface);
+}
+
+/* Green button hover - gets darker and lifts up */
+/* To reverse: Remove 'transform' for no lift effect */
+.btn-primary:hover {
+    background-color: var(--accent-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,102,68,0.18);
+}
+
+/* Green button when clicked - returns to normal position */
+.btn-primary:active {
+    transform: translateY(0); /* Back to normal position */
+}
+
+/* White button with green border - secondary action */
+.btn-secondary {
+    background-color: transparent; /* No background */
+    color: #009051;
+    border: 2px solid #006B3D; /* Green border */
+}
+
+/* Secondary button hover - fills with light green */
+.btn-secondary:hover {
+    background-color: #cef1dd; /* Light green fill */
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* Large button variant */
+/* To reverse: Remove this class and use regular btn instead */
+.btn-large {
+    padding: 1rem 2rem; /* Bigger padding */
+    font-size: 1.1rem;
+}
+
+/* ============ PROBLEM SECTION ============ */
+.demo-section {
+    background-color: var(--surface);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.demo-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.demo-content p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.demo-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* ============ PROMISE SECTION ============ */
+.promise-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #006B3D 0%, #009051 100%); /* Green gradient */
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.promise-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.promise-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============ FEATURES SECTION ============ */
+.features-section {
+    margin-bottom: 3rem;
+}
+
+.features-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+}
+
+/* Grid layout for feature cards */
+/* To reverse: Change to 'grid-template-columns: 1fr' for single column */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual feature card styling */
+.feature-card {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+/* Card hover effect - lifts up */
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Large emoji icon */
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+}
+
+.feature-card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ============ CTA SECTION ============ */
+/* Call-To-Action section at the bottom */
+.cta-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* ============ FOOTER ============ */
+/* Dark footer at bottom of page */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    margin-top: 4rem;
+    padding: 3rem 2rem 1rem;
+}
+
+/* Grid layout for footer sections */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer section headings */
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Footer links list - removes bullets */
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer link styling */
+.footer-section a {
+    color: #bbb; /* Light gray */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Footer link hover - turns white */
+.footer-section a:hover {
+    color: white;
+}
+
+/* Bottom footer text and border */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333; /* Dark gray line */
+    color: #888;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+/* Styles for tablets and phones */
+@media (max-width: 768px) {
+    /* Switch navbar to simple flex layout */
+    .navbar {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        position: relative;
+    }
+
+    /* Show hamburger menu on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide nav links by default - shown by hamburger click */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; /* Below header */
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column; /* Stack links vertically */
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    /* Show nav links when hamburger is active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Move button to right side */
+    .nav-btn {
+        margin-left: auto;
+    }
+
+    /* Reduce hero heading size on mobile */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Stack buttons vertically on mobile */
+    .button-group {
+        flex-direction: column;
+    }
+
+    /* features grid becomes single column on mobile */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce padding on mobile forms */
+    .contact-form {
+        padding: 1rem;
+    }
+}
