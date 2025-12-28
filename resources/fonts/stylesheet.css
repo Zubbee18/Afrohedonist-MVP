@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Averta';
+    src: url('Averta-Light.woff2') format('woff2'),
+        url('Averta-Light.woff') format('woff'),
+        url('Averta-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
