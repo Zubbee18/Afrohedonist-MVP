@@ -3,8 +3,18 @@
     src: url("resources/fonts/Averta-Light.woff2") format("woff2"),
         url("resources/fonts/Averta-Light.woff") format("woff"),
         url("resources/fonts/Averta-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
+@font-face {
+    font-family: "Averta";
+    src: url("resources/fonts/Averta-Light.woff2") format("woff2");
+    font-weight: 700 900;
+    font-style: normal;
+    font-display: swap;
+}
 /* ============ RESET & BASE STYLES ============ */
 /* Remove default margins and padding from all elements */
 /* To reverse: Add back margin/padding to individual elements as needed */
@@ -200,9 +210,10 @@ header {
 /* Container for all main content */
 /* To reverse: Remove 'max-width' to make it full width */
 main {
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto; /* Centers the content */
     padding: 2rem; /* Space around content */
+    background-color: #F7F5F3;
 }
 
 /* ============ HERO SECTION ============ */
@@ -211,20 +222,23 @@ main {
     text-align: center; /* Centers all text */
     padding: 3rem 0; /* Space top and bottom */
     margin-bottom: 3rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
 }
 
 /* Hero heading styling */
 .hero h1 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+    font-size: 64px;
+    /* margin-bottom: 1rem; */
+    font-weight: 900;
     line-height: 1.2;
     color: #1a1a1a; /* Very dark color */
 }
 
 /* Hero paragraph styling */
-.hero p {
-    font-size: 1.1rem;
+.hero h2 {
+    font-size: 20px;
     color: #666;
     margin-bottom: 2rem;
     font-weight: 600;
@@ -305,13 +319,18 @@ main {
     font-size: 1.1rem;
 }
 
-/* ============ PROBLEM SECTION ============ */
+/* ============ DEMO & PROBLEM SECTION ============ */
 .demo-section {
     background-color: var(--surface);
     padding: 3rem 2rem;
     border-radius: 8px;
     margin-bottom: 3rem;
     box-shadow: 0 2px 8px var(--shadow);
+}
+
+.demo-content {
+    margin: 0 auto;
+    text-align: center;
 }
 
 .demo-content h2 {
@@ -341,6 +360,9 @@ main {
     color: white;
     border-radius: 8px;
     margin-bottom: 3rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .promise-section h2 {
@@ -412,8 +434,8 @@ main {
 .cta-section {
     text-align: center;
     padding: 3rem 2rem;
-    background-color: var(--accent);
-    color: white;
+    background-color: var(--surface);
+    color: var(--text);
     border-radius: 8px;
     margin-bottom: 3rem;
 }
@@ -433,7 +455,6 @@ main {
 footer {
     background-color: #1a1a1a;
     color: white;
-    margin-top: 4rem;
     padding: 3rem 2rem 1rem;
 }
 
@@ -497,6 +518,7 @@ footer {
     /* Show hamburger menu on mobile */
     .hamburger {
         display: flex;
+        justify-content: right;
     }
 
     /* Hide nav links by default - shown by hamburger click */
@@ -526,12 +548,11 @@ footer {
 
     /* Reduce hero heading size on mobile */
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 42px;
     }
 
-    /* Stack buttons vertically on mobile */
-    .button-group {
-        flex-direction: column;
+    .hero h2 {
+        font-size: 16px;
     }
 
     /* features grid becomes single column on mobile */
