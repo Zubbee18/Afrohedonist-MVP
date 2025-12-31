@@ -27,11 +27,9 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#demo">How it works</a></li>
                 <li><a href="#features">Features</a></li>
-                <!-- <li><a href="#demo">About</a></li> -->
-                <li><a href="#cta">Contact</a></li>
             </ul>
 
-            <button class="btn nav-btn" type="button">Get started</button>
+            <a href="#cta"><button class="btn nav-btn" type="button">Get started</button></a>
 
             <!-- Hamburger Toggle Button for mobile navigation -->
             <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
@@ -49,8 +47,8 @@
             <h1>The Hidden Soul of Africa You Won’t Find in Guidebooks.</h1>
             <h2>Afrohedonist is where you get outing ideas tailored for your needs and situation. From where you live, to how you feel, we’ll meet you where you are.</h2>
             <div class="button-group">
-                <button class="btn btn-primary" type="button">Send a message</button>
-                <button class="btn btn-secondary" type="button">How our platform works</button>
+                <a href="#cta"><button class="btn btn-primary" type="button">Get started</button></a>
+                <button class="btn btn-secondary" type="button">Learn more</button>
             </div>
         </section>
 
@@ -108,7 +106,39 @@
             <h2>Ready to Celebrate?</h2>
             <p>Join thousands discovering the joy of authentic cultural experiences</p>
             <!-- Call to action button -->
-            <button class="btn btn-primary btn-large">Send a message</button>
+            <button class="btn btn-primary btn-large">Get started</button>
+
+            <section class="form-section">
+                <form action="./submit_page" method="get" class="waitlist-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <br>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <br>
+                        <input id="phone" name="phone" placeholder="Your phone number"></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-list"></label>
+                        <br>
+                        <input type="checkbox" id="email-list" name="email-list" >  Add me to your email list</input>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Join the waitlist</button>
+                    </div>
+                </form>
+            </section>
         </section>
     </main>
 
@@ -181,6 +211,27 @@
                     hamburger.classList.remove('active'); // Remove active class from hamburger
                     hamburger.setAttribute('aria-expanded', 'false'); // Update aria attribute
                 }
+            });
+
+            /* Javasript to show form section after cta button is pressed */
+            const ctaButton = document.querySelector('.cta-section .btn');
+            const navButton = document.querySelector('.nav-btn');
+            const priButton = document.querySelector('.btn-primary');
+            const formSection = document.querySelector('.form-section');
+
+            ctaButton.addEventListener('click', function() {
+                formSection.classList.add('active');
+                ctaButton.style.display = 'none'; // Optional
+            });
+
+            priButton.addEventListener('click', function() {
+                formSection.classList.add('active');
+                ctaButton.style.display = 'none'; // Optional
+            });
+
+            navButton.addEventListener('click', function() {
+                formSection.classList.add('active');
+                ctaButton.style.display = 'none'; // Optional
             });
         }
     </script>

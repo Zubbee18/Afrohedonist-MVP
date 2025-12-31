@@ -186,10 +186,11 @@ header {
 /* To reverse: Remove this rule */
 .nav-links a:focus-visible,
 .nav-btn:focus-visible,
-.btn:focus-visible {
+.btn:focus-visible,
+.form-group:focus-visible {    /* Trying to add focus style for form groups */
     outline: 3px solid var(--focus-ring);
     outline-offset: 2px;
-}
+} 
 
 /* Hamburger animation - first line rotates up */
 /* To reverse: Remove this rule */
@@ -443,11 +444,11 @@ main {
 /* Call-To-Action section at the bottom */
 .cta-section {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     background-color: var(--surface);
     color: var(--text);
     border-radius: 8px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .cta-section h2 {
@@ -458,6 +459,52 @@ main {
 .cta-section p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
+}
+
+/* ============ FORM SECTION ============ */
+/* Form section at the bottom after CTA button is pressed */
+.form-section {
+    display: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #009051;
+    box-shadow: 0 0 0 3px hsla(154, 100%, 28%, 0.3);
 }
 
 /* ============ FOOTER ============ */
