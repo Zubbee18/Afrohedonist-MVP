@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'Averta';
+    src: url('resources/fonts/Averta-Bold.woff2') format('woff2'),
+        url('resources/fonts/Averta-Bold.woff') format('woff'),
+        url('resources/fonts/Averta-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('resources/fonts/Averta-Regular.woff2') format('woff2'),
+        url('resources/fonts/Averta-Regular.woff') format('woff'),
+        url('resources/fonts/Averta-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ============ RESET & BASE STYLES ============ */
 /* Remove default margins and padding from all elements */
 /* To reverse: Add back margin/padding to individual elements as needed */
@@ -8,12 +28,17 @@
 }
 
 /* Set the default font family for the entire page */
+
+/* @media (min-width: 1000px) { 
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+} */
+
 /* To reverse: Change font-family to a different font like Arial, Georgia, etc. */
 body {
     font-style: normal;
-    font-weight: 300;
-    font-family: "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-display: optional;
+    font-weight: normal;
+    font-family: "Averta", "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
@@ -161,10 +186,11 @@ header {
 /* To reverse: Remove this rule */
 .nav-links a:focus-visible,
 .nav-btn:focus-visible,
-.btn:focus-visible {
+.btn:focus-visible,
+.form-group:focus-visible {    /* Trying to add focus style for form groups */
     outline: 3px solid var(--focus-ring);
     outline-offset: 2px;
-}
+} 
 
 /* Hamburger animation - first line rotates up */
 /* To reverse: Remove this rule */
@@ -188,9 +214,10 @@ header {
 /* Container for all main content */
 /* To reverse: Remove 'max-width' to make it full width */
 main {
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto; /* Centers the content */
     padding: 2rem; /* Space around content */
+    background-color: #F7F5F3;
 }
 
 /* ============ HERO SECTION ============ */
@@ -199,23 +226,35 @@ main {
     text-align: center; /* Centers all text */
     padding: 3rem 0; /* Space top and bottom */
     margin-bottom: 3rem;
+    background-image: linear-gradient(rgba(138, 159, 139, 0.8), rgba(240, 245, 240, 0.9)), url("https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/c4/c2/af/19/6e/v1_E10/E1075S45.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=750fe8480e15d7cefc913ecf9d09510d7b21e8866fa125541c261c0d5ad69223"); /* Background image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
 }
 
 /* Hero heading styling */
 .hero h1 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+    font-size: 55px;
+    /* margin-bottom: 1rem; */
+    font-weight: bold;
+    line-height: 1.2;
     color: #1a1a1a; /* Very dark color */
 }
 
 /* Hero paragraph styling */
-.hero p {
-    font-size: 1.1rem;
+.hero h2 {
+    font-size: 22px;
     color: #666;
     margin-bottom: 2rem;
-    font-weight: 600;
+    font-weight: normal;
+    max-width: 800px;
 }
 
+.hero h2, .hero h1 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* Container for buttons below hero text */
 /* To reverse: Change 'flex-direction: row' to 'column' */
 .button-group {
@@ -234,8 +273,7 @@ main {
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease; /* Smooth animation on hover */
-    font-family: "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-display: optional;
+    font-family: "Averta", "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 .btn:hover {
@@ -292,13 +330,18 @@ main {
     font-size: 1.1rem;
 }
 
-/* ============ PROBLEM SECTION ============ */
+/* ============ DEMO & PROBLEM SECTION ============ */
 .demo-section {
     background-color: var(--surface);
     padding: 3rem 2rem;
     border-radius: 8px;
     margin-bottom: 3rem;
     box-shadow: 0 2px 8px var(--shadow);
+}
+
+.demo-content {
+    margin: 0 auto;
+    text-align: center;
 }
 
 .demo-content h2 {
@@ -328,6 +371,9 @@ main {
     color: white;
     border-radius: 8px;
     margin-bottom: 3rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .promise-section h2 {
@@ -398,11 +444,11 @@ main {
 /* Call-To-Action section at the bottom */
 .cta-section {
     text-align: center;
-    padding: 3rem 2rem;
-    background-color: var(--accent);
-    color: white;
+    padding: 2rem 1rem;
+    background-color: var(--surface);
+    color: var(--text);
     border-radius: 8px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .cta-section h2 {
@@ -415,12 +461,57 @@ main {
     margin-bottom: 2rem;
 }
 
+/* ============ FORM SECTION ============ */
+/* Form section at the bottom after CTA button is pressed */
+.form-section {
+    display: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #009051;
+    box-shadow: 0 0 0 3px hsla(154, 100%, 28%, 0.3);
+}
+
 /* ============ FOOTER ============ */
 /* Dark footer at bottom of page */
 footer {
     background-color: #1a1a1a;
     color: white;
-    margin-top: 4rem;
     padding: 3rem 2rem 1rem;
 }
 
@@ -484,6 +575,7 @@ footer {
     /* Show hamburger menu on mobile */
     .hamburger {
         display: flex;
+        justify-content: right;
     }
 
     /* Hide nav links by default - shown by hamburger click */
@@ -513,12 +605,11 @@ footer {
 
     /* Reduce hero heading size on mobile */
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 42px;
     }
 
-    /* Stack buttons vertically on mobile */
-    .button-group {
-        flex-direction: column;
+    .hero h2 {
+        font-size: 16px;
     }
 
     /* features grid becomes single column on mobile */
