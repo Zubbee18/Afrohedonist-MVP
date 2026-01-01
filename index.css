@@ -27,13 +27,6 @@
     box-sizing: border-box;
 }
 
-/* Set the default font family for the entire page */
-
-/* @media (min-width: 1000px) { 
-body {
-    font-family: Arial, Helvetica, sans-serif; 
-} */
-
 /* To reverse: Change font-family to a different font like Arial, Georgia, etc. */
 body {
     font-style: normal;
@@ -86,14 +79,14 @@ header {
     padding: 1rem 2rem; /* Space inside the navbar */
     width: 100%;
     position: relative;
+    max-height: 76px;
 }
 
-/* Logo positioning - pushed to the left */
-/* To reverse: Remove 'justify-self: start' to center it */
 .nav-logo {
     justify-self: start;
+    margin-right: auto;
     height: auto;
-    width: fit-content; /* Takes up only needed width */
+    width: fit-content;
 }
 
 /* Logo text styling */
@@ -101,12 +94,6 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
-}
-
-/* "Join Now" button positioning - pushed to the right */
-/* To reverse: Remove 'justify-self: end' */
-.nav-btn {
-    justify-self: end;
 }
 
 /* Navigation links list - removes bullet points */
@@ -140,18 +127,18 @@ header {
     border-radius: 4px;
 }
 
-/* Styling for "Join Now" button */
-/* To reverse: Change background-color to 'transparent' */
+/* Styling for nav button */
 .nav-btn {
     background-color: var(--accent);
     color: var(--surface);
-    border: none; /* Removes button border */
+    border: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 6px; /* Rounded corners */
-    cursor: pointer; /* Hand cursor on hover */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
     font-weight: 600;
     transition: background-color 0.3s ease;
-    white-space: nowrap; /* Keeps text on one line */
+    white-space: nowrap;
     flex: 0 0 auto;
 }
 
@@ -170,13 +157,14 @@ header {
     border: none;
     cursor: pointer;
     gap: 6px; /* Space between bars */
+    flex: 0 0 auto;
 }
 
 /* The three horizontal lines in the hamburger */
 /* To reverse: Change height/width for different sized hamburger */
 .hamburger span {
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: #333;
     border-radius: 2px; /* Slightly rounded edges */
     transition: all 0.3s ease; /* Smooth animation */
@@ -193,43 +181,35 @@ header {
 } 
 
 /* Hamburger animation - first line rotates up */
-/* To reverse: Remove this rule */
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
+    transform: rotate(45deg) translate(6px, 5px);
 }
 
 /* Hamburger animation - middle line disappears */
-/* To reverse: Change opacity to 1 */
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
 
 /* Hamburger animation - third line rotates down */
-/* To reverse: Remove this rule */
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* ============ MAIN CONTENT ============ */
 /* Container for all main content */
-/* To reverse: Remove 'max-width' to make it full width */
 main {
     max-width: 2000px;
-    margin: 0 auto; /* Centers the content */
-    padding: 2rem; /* Space around content */
+    margin: 0 auto;
     background-color: #F7F5F3;
 }
 
 /* ============ HERO SECTION ============ */
-/* The large banner section at the top */
 .hero {
-    text-align: center; /* Centers all text */
-    padding: 3rem 0; /* Space top and bottom */
-    margin-bottom: 3rem;
+    text-align: center;
+    padding: 3rem 2rem;
     background-image: linear-gradient(rgba(138, 159, 139, 0.8), rgba(240, 245, 240, 0.9)), url("https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/c4/c2/af/19/6e/v1_E10/E1075S45.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=750fe8480e15d7cefc913ecf9d09510d7b21e8866fa125541c261c0d5ad69223"); /* Background image */
     background-size: cover;
     background-position: center;
-    border-radius: 8px;
 }
 
 /* Hero heading styling */
@@ -330,11 +310,16 @@ main {
     font-size: 1.1rem;
 }
 
+.promise-section, .features-section, .cta-section {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ============ DEMO & PROBLEM SECTION ============ */
 .demo-section {
     background-color: var(--surface);
     padding: 3rem 2rem;
-    border-radius: 8px;
     margin-bottom: 3rem;
     box-shadow: 0 2px 8px var(--shadow);
 }
@@ -566,27 +551,39 @@ footer {
     /* Switch navbar to simple flex layout */
     .navbar {
         display: flex;
-        align-items: center;
+        /* align-items: right; */
         padding: 1rem;
         gap: 1rem;
         position: relative;
     }
 
+    .nav-logo span:nth-child(2) {
+        display: none;
+    }
+
+    .nav-logo span:first-child {
+        font-size: 3rem;
+        font-weight: 900;
+        padding: 0.2rem;
+        color: var(--accent);
+    }
+
+
     /* Show hamburger menu on mobile */
     .hamburger {
         display: flex;
-        justify-content: right;
+        margin-right: 1rem;
     }
 
     /* Hide nav links by default - shown by hamburger click */
     .nav-links {
         display: none;
         position: absolute;
-        top: 100%; /* Below header */
+        top: 100%;
         left: 0;
         right: 0;
         background: white;
-        flex-direction: column; /* Stack links vertically */
+        flex-direction: column;
         padding: 1rem;
         gap: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -601,6 +598,7 @@ footer {
     /* Move button to right side */
     .nav-btn {
         margin-left: auto;
+        margin-right: 0.2rem;
     }
 
     /* Reduce hero heading size on mobile */
