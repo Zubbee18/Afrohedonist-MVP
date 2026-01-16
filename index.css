@@ -19,15 +19,12 @@
 }
 
 /* ============ RESET & BASE STYLES ============ */
-/* Remove default margins and padding from all elements */
-/* To reverse: Add back margin/padding to individual elements as needed */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* To reverse: Change font-family to a different font like Arial, Georgia, etc. */
 body {
     font-style: normal;
     font-weight: normal;
@@ -38,45 +35,47 @@ body {
 }
 
 /* ============ DESIGN TOKENS (COLOR VARIABLES) ============ */
-/* These are like shortcuts for colors used throughout the site */
-/* To reverse: Change the hex color codes to different colors */
 :root {
-    --bg: #f9f9f9;           /* Light gray background */
-    --surface: #ffffff;      /* White for cards and surfaces */
-    --text: #333333;         /* Dark gray for text */
-    --muted: #666666;        /* Medium gray for secondary text */
-    --accent: #006B3D;       /* Green - primary brand color */
-    --accent-strong: #009051; /* Darker green - hover states */
-    --shadow: rgba(0,0,0,0.08); /* Subtle shadow */
-    --focus-ring: rgba(0,102,68,0.25); /* Semi-transparent green for focus */
+    --bg: #f9f9f9;
+    --surface: #ffffff;
+    --text: #333333;
+    --muted: #666666;
+    --accent: #006B3D;
+    --accent-strong: #009051;
+    --accent-light: #cef1dd;
+    --orange: #ea580c;
+    --orange-light: #fed7aa;
+    --shadow: rgba(0,0,0,0.08);
+    --focus-ring: rgba(0,102,68,0.25);
 }
 
-/* Apply the background color variable to body */
-/* To reverse: Set background-color to #f9f9f9 directly instead */
 body {
     background-color: var(--bg);
     color: var(--text);
 }
 
-/* ============ NAVBAR/HEADER ============ */
-/* The sticky header that stays at the top */
-/* To reverse: Remove 'sticky' and 'position' to make it scroll with page */
-header {
-    background: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow below header */
-    position: sticky; /* Stays at top when scrolling */
-    top: 0;
-    z-index: 1000; /* Keeps header above other content */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
 }
 
-/* Grid layout for navbar - 3 columns: logo, middle space, buttons */
-/* To reverse: Change to 'display: flex' for a simpler row layout */
+/* ============ NAVBAR/HEADER ============ */
+header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .navbar {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    align-items: center; /* Vertically centers all items */
-    gap: 1rem; /* Space between items */
-    padding: 1rem 2rem; /* Space inside the navbar */
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
     width: 100%;
     position: relative;
     max-height: 76px;
@@ -89,39 +88,33 @@ header {
     width: fit-content;
 }
 
-/* Logo text styling */
+/* Mobile logo text styling */
 .nav-logo span {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
 }
 
-/* Navigation links list - removes bullet points */
-/* To reverse: Set 'list-style: disc' to show bullets */
 .nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Displays items horizontally */
+    display: flex;
     justify-content: center;
-    gap: 2rem; /* Space between nav items */
+    gap: 2rem;
 }
 
 
 /* Styling for navigation links */
-/* To reverse: Remove 'text-decoration: none' to show underlines */
 .nav-links a {
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
-    transition: color 0.3s ease; /* Smooth color change on hover */
+    transition: all 0.3s ease;
     padding: 0.5rem 0;
 }
 
-/* Link color change on hover */
-/* To reverse: Remove this rule to remove hover effect */
 .nav-links a:hover {
-    /* color: var(--accent); Changes to green on hover */
     background-color: #f6f1f1;
     padding: 7px;
     border-radius: 4px;
@@ -140,63 +133,51 @@ header {
     transition: background-color 0.3s ease;
     white-space: nowrap;
     flex: 0 0 auto;
+    width: fit-content;
 }
 
-/* Button hover effect - gets darker */
-/* To reverse: Remove this rule */
 .nav-btn:hover {
     background-color: var(--accent-strong);
 }
 
-/* Hamburger menu - hidden on desktop */
-/* To reverse: Change 'display: none' to 'display: flex' */
 .hamburger {
     display: none;
-    flex-direction: column; /* Stacks the bars vertically */
+    flex-direction: column;
     background: none;
     border: none;
     cursor: pointer;
-    gap: 6px; /* Space between bars */
+    gap: 6px;
     flex: 0 0 auto;
 }
 
-/* The three horizontal lines in the hamburger */
-/* To reverse: Change height/width for different sized hamburger */
 .hamburger span {
     width: 25px;
     height: 2px;
     background-color: #333;
-    border-radius: 2px; /* Slightly rounded edges */
-    transition: all 0.3s ease; /* Smooth animation */
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-/* Keyboard focus style for accessibility */
-/* To reverse: Remove this rule */
 .nav-links a:focus-visible,
 .nav-btn:focus-visible,
-.btn:focus-visible,
-.form-group:focus-visible {    /* Trying to add focus style for form groups */
+.btn:focus-visible {
     outline: 3px solid var(--focus-ring);
     outline-offset: 2px;
-} 
+}
 
-/* Hamburger animation - first line rotates up */
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 5px);
 }
 
-/* Hamburger animation - middle line disappears */
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
 
-/* Hamburger animation - third line rotates down */
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* ============ MAIN CONTENT ============ */
-/* Container for all main content */
 main {
     max-width: 2000px;
     margin: 0 auto;
@@ -206,96 +187,130 @@ main {
 /* ============ HERO SECTION ============ */
 .hero {
     text-align: center;
-    padding: 3rem 2rem;
-    background-image: linear-gradient(rgba(138, 159, 139, 0.8), rgba(240, 245, 240, 0.9)), url("https://elements-resized.envatousercontent.com/envato-dam-assets-production/EVA/TRX/c4/c2/af/19/6e/v1_E10/E1075S45.jpg?w=800&cf_fit=scale-down&q=85&format=auto&s=750fe8480e15d7cefc913ecf9d09510d7b21e8866fa125541c261c0d5ad69223"); /* Background image */
+    padding: 4rem 2rem;
+    /* background: linear-gradient(rgba(255, 237, 213, 0.7), rgba(254, 215, 170, 0.5)),  */
+                /* url("https://images.unsplash.com/photo-1655720348590-c739c860beed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGFmcmljYW4lMjBmcmllbmRzfGVufDF8fHx8MTc2ODA3MTg0Nnww&ixlib=rb-4.1.0&q=80&w=1080"); */
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
-/* Hero heading styling */
 .hero h1 {
     font-size: 55px;
-    /* margin-bottom: 1rem; */
     font-weight: bold;
     line-height: 1.2;
-    color: #1a1a1a; /* Very dark color */
+    color: #1a1a1a;
+    max-width: 900px;
+    margin: 0 auto 1rem;
 }
 
-/* Hero paragraph styling */
+.hero h1 .highlight {
+    color: var(--orange);
+}
+
 .hero h2 {
     font-size: 22px;
     color: #666;
     margin-bottom: 2rem;
     font-weight: normal;
     max-width: 800px;
-}
-
-.hero h2, .hero h1 {
-    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
-/* Container for buttons below hero text */
-/* To reverse: Change 'flex-direction: row' to 'column' */
+
 .button-group {
     display: flex;
-    gap: 1rem; /* Space between buttons */
+    gap: 1rem;
     justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #20ba5a;
+}
+
+/* Social Proof */
+.social-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.user-avatars {
+    display: flex;
+    margin-left: -0.5rem;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+    margin-left: -0.5rem;
+}
+
+.social-proof-text {
+    text-align: left;
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.social-proof-text p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0;
 }
 
 /* ============ BUTTONS ============ */
-/* Base button styling - applies to all buttons */
 .btn {
-    padding: 0.75rem 1.5rem; /* Inside spacing */
+    padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease; /* Smooth animation on hover */
-    font-family: "Averta", "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: all 0.3s ease;
+    font-family: "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-.btn:hover {
-    background-color: var(--accent-strong);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,102,68,0.18);
-}
-
-.btn:active {
-    transform: translateY(0); /* Back to normal position */
-}
-
-/* Green button - primary action */
-/* To reverse: Change background-color to white */
 .btn-primary {
     background-color: var(--accent);
     color: var(--surface);
 }
 
-/* Green button hover - gets darker and lifts up */
-/* To reverse: Remove 'transform' for no lift effect */
 .btn-primary:hover {
     background-color: var(--accent-strong);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,102,68,0.18);
 }
 
-/* Green button when clicked - returns to normal position */
 .btn-primary:active {
-    transform: translateY(0); /* Back to normal position */
+    transform: translateY(0);
 }
 
-/* White button with green border - secondary action */
 .btn-secondary {
-    background-color: transparent; /* No background */
-    color: #009051;
-    border: 2px solid #006B3D; /* Green border */
+    background-color: transparent;
+    color: var(--accent-strong);
+    border: 2px solid var(--accent);
 }
 
-/* Secondary button hover - fills with light green */
 .btn-secondary:hover {
-    background-color: #cef1dd; /* Light green fill */
+    background-color: var(--accent-light);
     transform: translateY(-2px);
 }
 
@@ -303,115 +318,266 @@ main {
     transform: translateY(0);
 }
 
-/* Large button variant */
-/* To reverse: Remove this class and use regular btn instead */
 .btn-large {
-    padding: 1rem 2rem; /* Bigger padding */
+    padding: 1rem 2rem;
     font-size: 1.1rem;
 }
 
-.promise-section, .features-section, .cta-section {
-    max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ============ DEMO & PROBLEM SECTION ============ */
+/* ============ HOW IT WORKS / DEMO SECTION ============ */
 .demo-section {
     background-color: var(--surface);
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     margin-bottom: 3rem;
-    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .demo-content {
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+.section-description {
+    font-size: 1.25rem;
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 auto 3rem;
     text-align: center;
 }
 
-.demo-content h2 {
-    font-size: 2rem;
+/* Chat Example */
+.chat-example {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* .chat-example h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    grid-column: 1 / -1;
+} */
+
+.chat-interface {
+    background-color: #fafafa;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.chat-example img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.chat-message {
     margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: var(--accent-strong);
+    color: white;
+    margin-left: auto;
+    border-top-right-radius: 4px;
+}
+
+.bot-message {
+    background-color: #e5e5ea;
+    color: #1a1a1a;
+    margin-right: auto;
+    border-top-left-radius: 4px;
+}
+
+.bot-header {
+    display: flex;
+    /* align-items: center; */
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--accent);
+}
+
+.chat-message p {
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 0.25rem;
+    padding: 1rem;
+    background-color: #e5e5ea;
+    border-radius: 16px;
+    border-top-left-radius: 4px;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: #999;
+    border-radius: 50%;
+    animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ============ STEPS SECTION ============ */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 4rem 2rem;
+}
+
+.step-card {
+    background-color: #fafafa;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    text-align: center;
+    /* border: 2px solid #f0f0f0; */
+    /* transition: all 0.3s ease; */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-light);
+}
+
+/* Same as the other section, commented out parts are meant to work if links are incorporated into these cards, which would be cool */
+
+/* .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-light);
+} */
+
+.step-number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--accent-light);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    padding: 10px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-icon  {
+    background-color: var(--accent-light);
+    margin: 2rem auto;
+    width: 5rem;
+    height: 5rem;
+    padding: 0.875rem;
+}
+
+.step-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
     color: #1a1a1a;
 }
 
-.demo-content p {
-    font-size: 1rem;
+.step-card p {
     color: var(--muted);
-    line-height: 1.8;
-}
-
-.demo-content video {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-/* ============ PROMISE SECTION ============ */
-.promise-section {
-    text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #006B3D 0%, #009051 100%); /* Green gradient */
-    color: white;
-    border-radius: 8px;
-    margin-bottom: 3rem;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.promise-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.promise-section p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* ============ FEATURES SECTION ============ */
 .features-section {
-    margin-bottom: 3rem;
-}
-
-.features-section h2 {
+    max-width: 1300px;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: #1a1a1a;
+    margin: 0 auto 4rem;
+    padding: 4rem 2rem;
 }
 
-/* Grid layout for feature cards */
-/* To reverse: Change to 'grid-template-columns: 1fr' for single column */
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
     gap: 2rem;
+    margin-top: 3rem;
+    max-height: 38.4rem;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* Individual feature card styling */
 .feature-card {
     background-color: var(--surface);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 1rem;
     text-align: center;
-    box-shadow: 0 2px 8px var(--shadow);
-    transition: all 0.3s ease;
+    border: 2px solid #f0f0f0;
+    width: 20.2rem;
+    height: 18rem;
+    /* transition: all 0.3s ease; */
 }
 
-/* Card hover effect - lifts up */
-.feature-card:hover {
+/* Hoping to use this when there are links connected to the cards so that users can use it to get started */
+
+/* .feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-light);
+} */
+
+.feature-icon {
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.875rem;
 }
 
-/* Large emoji icon */
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.shopping {
+    background-color: #F3E8FF;
+}
+
+.travel {
+    background-color: #DBEAFE;
+}
+
+.date {
+    background-color: #FCE7F3;
+}
+
+.mood {
+    background-color: #FFEDD4;
+}
+
+.location {
+    background-color: #DCFCE7;
+}
+
+.event {
+    background-color: #FEF3C6;
 }
 
 .feature-card h3 {
@@ -425,33 +591,172 @@ main {
     line-height: 1.6;
 }
 
+/* ============ TESTIMONIALS SECTION ============ */
+.testimonials-section {
+    background-color: var(--surface);
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.testimonial-card {
+    background: linear-gradient(to bottom right, #fff5eb, #ffffff);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--orange-light);
+    transition: all 0.3s ease;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--orange-light);
+}
+
+.author-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+}
+
+.author-info p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.experience-badge {
+    display: inline-block;
+    background-color: var(--orange-light);
+    color: var(--orange);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-card {
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* ============ PROMISE SECTION ============ */
+.promise-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: white;
+    border-radius: 12px;
+    margin: 0 auto 3rem;
+    max-width: 1100px;
+}
+
+.promise-section h2 {
+    color: white;
+}
+
+.promise-section p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.promise-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.promise-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.check-icon {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
 /* ============ CTA SECTION ============ */
-/* Call-To-Action section at the bottom */
 .cta-section {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 2rem;
     background-color: var(--surface);
-    color: var(--text);
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    border-radius: 12px;
+    margin: 0 auto 3rem;
+    max-width: 1100px;
 }
 
 .cta-section h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #1a1a1a;
 }
 
-.cta-section p {
-    font-size: 1.1rem;
+.cta-section > p {
+    font-size: 1.25rem;
     margin-bottom: 2rem;
+    color: var(--muted);
 }
 
 /* ============ FORM SECTION ============ */
-/* Form section at the bottom after CTA button is pressed */
 .form-section {
     display: none;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 2px solid #f0f0f0;
 }
 
 .form-section.active {
@@ -474,33 +779,47 @@ main {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
     font-size: 1rem;
     font-family: inherit;
+    transition: border-color 0.3s ease;
 }
 
-.form-group input[type="checkbox"] {
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
     width: auto;
-    margin-right: 0.5rem;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-weight: 400;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #009051;
-    box-shadow: 0 0 0 3px hsla(154, 100%, 28%, 0.3);
+    border-color: var(--accent-strong);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.form-actions {
+    text-align: center;
 }
 
 /* ============ FOOTER ============ */
-/* Dark footer at bottom of page */
 footer {
     background-color: #1a1a1a;
     color: white;
     padding: 3rem 2rem 1rem;
 }
 
-/* Grid layout for footer sections */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -510,13 +829,17 @@ footer {
     margin-bottom: 2rem;
 }
 
-/* Footer section headings */
 .footer-section h4 {
     margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
-/* Footer links list - removes bullets */
+.footer-description {
+    color: #bbb;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
 .footer-section ul {
     list-style: none;
 }
@@ -525,57 +848,50 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-/* Footer link styling */
 .footer-section a {
-    color: #bbb; /* Light gray */
+    color: #bbb;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Footer link hover - turns white */
 .footer-section a:hover {
     color: white;
 }
 
-/* Bottom footer text and border */
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #333; /* Dark gray line */
+    border-top: 1px solid #333;
     color: #888;
 }
 
 /* ============ RESPONSIVE DESIGN ============ */
-/* Styles for tablets and phones */
+
+/* Tablet & Small Devices */
 @media (max-width: 768px) {
-    /* Switch navbar to simple flex layout */
     .navbar {
         display: flex;
-        /* align-items: right; */
         padding: 1rem;
         gap: 1rem;
         position: relative;
+    }
+
+    .mobile-view-logo {
+        display: inline;
+        font-size: 2rem;
+        font-weight: 900;
+        padding: 0.2rem;
     }
 
     .nav-logo span:nth-child(2) {
         display: none;
     }
 
-    .nav-logo span:first-child {
-        font-size: 3rem;
-        font-weight: 900;
-        padding: 0.2rem;
-        color: var(--accent);
-    }
-
-
-    /* Show hamburger menu on mobile */
     .hamburger {
         display: flex;
         margin-right: 1rem;
     }
 
-    /* Hide nav links by default - shown by hamburger click */
     .nav-links {
         display: none;
         position: absolute;
@@ -590,33 +906,147 @@ footer {
         z-index: 999;
     }
 
-    /* Show nav links when hamburger is active */
     .nav-links.active {
         display: flex;
     }
 
-    /* Move button to right side */
     .nav-btn {
         margin-left: auto;
         margin-right: 0.2rem;
     }
 
-    /* Reduce hero heading size on mobile */
     .hero h1 {
-        font-size: 42px;
+        font-size: 2rem;
     }
 
     .hero h2 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
-    /* features grid becomes single column on mobile */
-    .features-grid {
+    .social-proof {
+        flex-direction: column;
+    }
+
+    .social-proof-text {
+        text-align: center;
+    }
+
+    .demo-content h2,
+    .features-section h2,
+    .testimonials-section h2,
+    .promise-section h2,
+    .cta-section h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        margin: 0 1rem 2rem 1rem;
+    }
+
+    .steps-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Reduce padding on mobile forms */
-    .contact-form {
-        padding: 1rem;
+    .features-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promise-features {
+        align-items: center;
+        text-align: center;
+    }
+
+    .chat-example {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        width: 100%;
+        height: auto;
+        min-height: 15rem;
+    }
+
+    .features-grid {
+        max-height: none;
+    }
+
+    .promise-section {
+        margin: 2rem;
+    }
+
+    .cta-section {
+        margin: 2rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 0.875rem;
+    }
+
+    .demo-section,
+    .features-section,
+    .testimonials-section {
+        padding: 2rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .button-group {
+        gap: 0.75rem;
+    }
+
+    .btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-large {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .step-card,
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .promise-section {
+        padding: 2rem 1rem;
+    }
+
+    .promise-section p {
+        font-size: 1rem;
+    }
+
+    .promise-feature {
+        font-size: 1rem;
+    }
+
+    .stats-grid {
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
     }
 }
