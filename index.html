@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css" type="text/css">
-    <!-- Preconnect to Google Fonts for faster loading -->
+    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="resources/fonts/Averta-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="resources/fonts/Averta-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script type="text/javascript">
@@ -18,7 +16,7 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ux7zxrcfv3");
     </script>
-    <title>Afrohedonist - Celebrate Your Culture</title>
+    <title>Afrohedonist - Your AI Guide to African Experiences</title>
 </head>
 
 <body>
@@ -26,14 +24,13 @@
     <header>
         <nav class="navbar" aria-label="Primary">
             <div class="nav-logo">
-                <!-- Displays the logo or name of the website -->
                 <span class="mobile-view-logo">A</span><span>frohedonist</span>
             </div>
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#demo">How it works</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
             </ul>
 
             <a href="#cta"><button class="btn nav-btn" type="button">Get started</button></a>
@@ -51,69 +48,301 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero" id="home">
-            <h1>The Hidden Soul of Africa You Won’t Find in Guidebooks.</h1>
-            <h2>Afrohedonist is where you get outing ideas tailored for your needs and situation. From where you live, to how you feel, we’ll meet you where you are.</h2>
+            <h1>Your Personal Guide to <span class="highlight">African</span> Experiences</h1>
+            <h2>Feeling adventurous? Need a date idea? Want to explore local markets? Chat with our AI on WhatsApp and get personalized recommendations based on your mood and what's happening in your life.</h2>
             <div class="button-group">
-                <a href="#cta"><button class="btn btn-primary" type="button">Get started</button></a>
-                <button class="btn btn-secondary" type="button">Learn more</button>
+                <button class="btn btn-primary whatsapp-btn" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    Chat on WhatsApp
+                </button>
+                <a href="#how-it-works"><button class="btn btn-secondary" type="button">See How It Works</button></a>
+            </div>
+            
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <div class="user-avatars">
+                    <img src="https://images.unsplash.com/photo-1655720348590-c739c860beed?w=100" alt="User" class="avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="User" class="avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="User" class="avatar">
+                </div>
+                <div class="social-proof-text">
+                    <div class="stars">★★★★★</div>
+                    <p>Trusted by <strong>5,000+</strong> explorers</p>
+                </div>
             </div>
         </section>
 
-        <!-- DEMO SECTION -->
-        <section class="demo-section" id="demo">
+        <!-- HOW IT WORKS SECTION -->
+        <section class="demo-section">
             <div class="demo-content">
-                <h2>How it works</h2>
-                <video controls autoplay muted loop>
-                    <source src="./Afrohedonist Demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <!-- Chat Example -->
+                <div class="chat-example">
+                    <!-- <h3>Example Conversation</h3> -->
+                    <div class="chat-interface">
+                        <div class="chat-message user-message">
+                            <p>I'm feeling adventurous this weekend and want to do something outdoorsy with my partner. Budget is around $300.</p>
+                        </div>
+                        <div class="chat-message bot-message">
+                            <div class="bot-header">
+                                <span class="mobile-view-logo icon"><strong>A</strong></span>
+                                <strong>Afrohedonist</strong>
+                            </div>
+                            <p>Perfect! I have the best option for you :)</p>
+                            <p>🦁 <strong>Safari Day Trip</strong> - Nairobi National Park ($250 for 2) - See lions, giraffes, and rhinos just outside the city!</p>
+                        </div>
+                        <div class="chat-message user-message">
+                            <p>That sounds amazing! Tell me more about the safari!</p>
+                        </div>
+                        <div class="chat-message bot-message">
+                            <div class="bot-header">
+                                <span class="mobile-view-logo icon"><strong>A</strong></span>
+                                <strong>Afrohedonist</strong>
+                            </div>
+                            <p>The tour includes hotel pickup at 6 AM, 4-hour game drive, professional guide, and bottled water. Best for seeing animals during morning feeding time! 📸🌅</p>
+                        </div>
+                        <div class="typing-indicator">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1760199078626-d295728e9b1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwc2FmYXJpJTIwYWR2ZW50dXJlfGVufDF8fHx8MTc2ODA3MTg0NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Safari adventure in Africa">
+                </div>
             </div>
-        </section>        
+        </section>
 
-        <section class="demo-section" id="problem">
-            <div class="demo-content">
-                <h2>African experiences don't have to be so out of reach</h2>
-                <p>Simply send a message to Afrohedonist with your preferences and we'll match you with the perfect cultural experience.</p>
+        <!--STEPS SECTION-->
+        <section class="step-section" id="how-it-works">
+            <h2>How It Works</h2>
+            <p class="section-description">Getting personalized African experience recommendations is as easy as sending a message</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M14.536 21.6861C14.574 21.7807 14.64 21.8615 14.7253 21.9176C14.8105 21.9737 14.9109 22.0023 15.0128 21.9997C15.1148 21.9971 15.2136 21.9633 15.2958 21.903C15.3781 21.8426 15.4399 21.7586 15.473 21.6621L21.973 2.66206C22.005 2.57345 22.0111 2.47756 21.9906 2.38561C21.9701 2.29366 21.9238 2.20945 21.8572 2.14283C21.7906 2.07622 21.7064 2.02995 21.6145 2.00945C21.5225 1.98894 21.4266 1.99505 21.338 2.02706L2.338 8.52706C2.2415 8.56015 2.15743 8.62197 2.09708 8.70423C2.03672 8.78648 2.00297 8.88523 2.00036 8.98722C1.99775 9.0892 2.0264 9.18955 2.08246 9.27478C2.13853 9.36002 2.21932 9.42606 2.314 9.46406L10.244 12.6441C10.4947 12.7444 10.7225 12.8945 10.9136 13.0853C11.1047 13.2761 11.2552 13.5036 11.356 13.7541L14.536 21.6861Z" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21.854 2.14697L10.914 13.086" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Start a Conversation</h3>
+                    <p>Click the WhatsApp button and send us a message. Tell us what's on your mind or how you're feeling.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 18V5" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 13C14.1348 12.7471 13.3748 12.2206 12.834 11.4995C12.2932 10.7784 12.0005 9.90141 12 9C11.9995 9.90141 11.7068 10.7784 11.166 11.4995C10.6252 12.2206 9.8652 12.7471 9 13" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.598 6.49989C17.8281 6.10138 17.9635 5.65527 17.9936 5.19608C18.0237 4.73689 17.9478 4.27693 17.7717 3.85178C17.5956 3.42663 17.324 3.04769 16.9781 2.74427C16.6321 2.44085 16.221 2.22108 15.7765 2.10198C15.332 1.98288 14.866 1.96763 14.4147 2.0574C13.9634 2.14718 13.5387 2.33959 13.1737 2.61973C12.8086 2.89988 12.5129 3.26025 12.3093 3.67298C12.1058 4.0857 12 4.53971 12 4.99989C12 4.53971 11.8942 4.0857 11.6907 3.67298C11.4871 3.26025 11.1914 2.89988 10.8263 2.61973C10.4613 2.33959 10.0366 2.14718 9.5853 2.0574C9.13396 1.96763 8.66803 1.98288 8.22353 2.10198C7.77904 2.22108 7.3679 2.44085 7.02193 2.74427C6.67596 3.04769 6.40442 3.42663 6.22833 3.85178C6.05224 4.27693 5.97632 4.73689 6.00643 5.19608C6.03655 5.65527 6.17189 6.10138 6.402 6.49989" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.997 5.125C18.5848 5.27614 19.1305 5.55905 19.5928 5.95231C20.0551 6.34557 20.4218 6.83887 20.6652 7.39485C20.9086 7.95082 21.0223 8.55489 20.9976 9.16131C20.973 9.76773 20.8107 10.3606 20.523 10.895" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 17.9999C18.8805 17.9998 19.7364 17.7093 20.4349 17.1733C21.1335 16.6372 21.6356 15.8857 21.8635 15.0352C22.0914 14.1847 22.0323 13.2827 21.6954 12.4693C21.3585 11.6558 20.7625 10.9762 20 10.5359" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.967 17.4829C20.0371 18.0251 19.9953 18.576 19.8441 19.1014C19.693 19.6269 19.4357 20.1157 19.0882 20.5379C18.7407 20.96 18.3104 21.3064 17.8238 21.5557C17.3372 21.805 16.8046 21.9518 16.259 21.9872C15.7134 22.0227 15.1664 21.9458 14.6516 21.7615C14.1369 21.5772 13.6654 21.2893 13.2662 20.9157C12.8671 20.542 12.5488 20.0905 12.331 19.589C12.1132 19.0875 12.0006 18.5467 12 17.9999C11.9994 18.5467 11.8867 19.0875 11.669 19.589C11.4512 20.0905 11.1329 20.542 10.7338 20.9157C10.3346 21.2893 9.86313 21.5772 9.34838 21.7615C8.83364 21.9458 8.28657 22.0227 7.74097 21.9872C7.19537 21.9518 6.66283 21.805 6.17622 21.5557C5.68961 21.3064 5.25927 20.96 4.91178 20.5379C4.56429 20.1157 4.30703 19.6269 4.15589 19.1014C4.00474 18.576 3.96291 18.0251 4.033 17.4829" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.00001 17.9999C5.1195 17.9998 4.26361 17.7093 3.56507 17.1733C2.86653 16.6372 2.36438 15.8857 2.13648 15.0352C1.90859 14.1847 1.96769 13.2827 2.30462 12.4693C2.64156 11.6558 3.23749 10.9762 4.00001 10.5359" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.00299 5.125C5.41519 5.27614 4.86949 5.55905 4.40722 5.95231C3.94495 6.34557 3.57823 6.83887 3.33483 7.39485C3.09144 7.95082 2.97775 8.55489 3.00238 9.16131C3.02701 9.76773 3.18931 10.3606 3.47699 10.895" stroke="#006B3D" stroke-opacity="0.933333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>AI Understands You</h3>
+                    <p>Our intelligent chatbot analyzes your message, mood, and preferences to understand exactly what you need.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M11.017 2.81395C11.0599 2.58456 11.1816 2.37737 11.3611 2.22827C11.5406 2.07917 11.7667 1.99756 12 1.99756C12.2334 1.99756 12.4594 2.07917 12.6389 2.22827C12.8184 2.37737 12.9402 2.58456 12.983 2.81395L14.034 8.37195C14.1087 8.7671 14.3007 9.13057 14.585 9.41492C14.8694 9.69928 15.2329 9.89131 15.628 9.96595L21.186 11.017C21.4154 11.0598 21.6226 11.1815 21.7717 11.3611C21.9208 11.5406 22.0024 11.7666 22.0024 12C22.0024 12.2333 21.9208 12.4593 21.7717 12.6389C21.6226 12.8184 21.4154 12.9401 21.186 12.983L15.628 14.034C15.2329 14.1086 14.8694 14.3006 14.585 14.585C14.3007 14.8693 14.1087 15.2328 14.034 15.628L12.983 21.186C12.9402 21.4153 12.8184 21.6225 12.6389 21.7716C12.4594 21.9207 12.2334 22.0023 12 22.0023C11.7667 22.0023 11.5406 21.9207 11.3611 21.7716C11.1816 21.6225 11.0599 21.4153 11.017 21.186L9.96601 15.628C9.89137 15.2328 9.69934 14.8693 9.41498 14.585C9.13063 14.3006 8.76716 14.1086 8.37201 14.034L2.81401 12.983C2.58462 12.9401 2.37743 12.8184 2.22833 12.6389C2.07924 12.4593 1.99762 12.2333 1.99762 12C1.99762 11.7666 2.07924 11.5406 2.22833 11.3611C2.37743 11.1815 2.58462 11.0598 2.81401 11.017L8.37201 9.96595C8.76716 9.89131 9.13063 9.69928 9.41498 9.41492C9.69934 9.13057 9.89137 8.7671 9.96601 8.37195L11.017 2.81395Z" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 2V6" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 4H18" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 22C5.10457 22 6 21.1046 6 20C6 18.8954 5.10457 18 4 18C2.89543 18 2 18.8954 2 20C2 21.1046 2.89543 22 4 22Z" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Get Personalized Ideas</h3>
+                    <p>Receive curated recommendations for travel, shopping, or dates that perfectly match your vibe.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <div class="step-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M2.992 16.3419C3.13904 16.7129 3.17177 17.1193 3.086 17.5089L2.021 20.7989C1.98668 20.9658 1.99555 21.1386 2.04677 21.3011C2.09799 21.4635 2.18986 21.6102 2.31366 21.7272C2.43747 21.8442 2.58911 21.9276 2.7542 21.9696C2.91929 22.0115 3.09236 22.0106 3.257 21.9669L6.67 20.9689C7.03771 20.896 7.41852 20.9279 7.769 21.0609C9.90438 22.0582 12.3234 22.2691 14.5991 21.6567C16.8749 21.0442 18.8613 19.6476 20.2077 17.7133C21.5541 15.779 22.1741 13.4313 21.9583 11.0845C21.7425 8.73763 20.7047 6.54241 19.0281 4.88613C17.3514 3.22986 15.1437 2.21898 12.7944 2.03183C10.4451 1.84469 8.10513 2.49332 6.18744 3.86328C4.26975 5.23323 2.89753 7.23648 2.31289 9.51958C1.72825 11.8027 1.96877 14.2189 2.992 16.3419Z" stroke="#006B3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Refine & Explore</h3>
+                    <p>Chat back and forth to refine suggestions. Ask questions, get more details, or explore different options.</p>
+                </div>
             </div>
-        </section>  
+        </section>
 
-        <!-- KEY features SECTION -->
+        <!-- FEATURES SECTION -->
         <section class="features-section" id="features">
-            <h2>Why Afrohedonist</h2>
+            <h2>Everything You Need to Explore Africa</h2>
+            <p class="section-description">Our AI understands your vibe and suggests authentic African experiences that match your mood, budget, and lifestyle.</p>
+            
             <div class="features-grid">
-                <!-- Individual feature cards -->
                 <div class="feature-card">
-                    <div class="feature-icon">🎭</div>
-                    <h3>Authentic Experiences</h3>
-                    <p>Curated events and spaces that celebrate your culture with intention and pride.</p>
+                    <div class="travel feature-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M18.9467 9.05334L16.842 15.3662C16.7275 15.7099 16.5345 16.0221 16.2783 16.2783C16.0221 16.5345 15.7098 16.7275 15.3662 16.842L9.05334 18.9467L11.158 12.6338C11.2726 12.2902 11.4655 11.9779 11.7217 11.7217C11.9779 11.4656 12.2902 11.2726 12.6338 11.158L18.9467 9.05334Z" stroke="#155DFC" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 25.6667C20.4433 25.6667 25.6667 20.4434 25.6667 14C25.6667 7.55672 20.4433 2.33337 14 2.33337C7.55668 2.33337 2.33334 7.55672 2.33334 14C2.33334 20.4434 7.55668 25.6667 14 25.6667Z" stroke="#155DFC" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Travel Adventures</h3>
+                    <p>Discover hidden gems, safari experiences, beach getaways, and cultural tours tailored to your travel style and budget.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Real Community</h3>
-                    <p>Connect with like-minded individuals who share your values and passion.</p>
+                    <div class="shopping feature-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M18.6667 11.6666C18.6667 12.9043 18.175 14.0913 17.2998 14.9665C16.4247 15.8416 15.2377 16.3333 14 16.3333C12.7623 16.3333 11.5753 15.8416 10.7002 14.9665C9.82501 14.0913 9.33334 12.9043 9.33334 11.6666" stroke="#9810FA" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.62018 7.03967H24.3798" stroke="#9810FA" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.96667 6.37821C3.66375 6.7821 3.5 7.27334 3.5 7.77821V23.3334C3.5 23.9522 3.74583 24.5457 4.18342 24.9833C4.621 25.4209 5.21449 25.6667 5.83333 25.6667H22.1667C22.7855 25.6667 23.379 25.4209 23.8166 24.9833C24.2542 24.5457 24.5 23.9522 24.5 23.3334V7.77821C24.5 7.27334 24.3363 6.7821 24.0333 6.37821L21.7 3.26671C21.4827 2.97692 21.2008 2.74171 20.8768 2.57971C20.5528 2.41771 20.1956 2.33337 19.8333 2.33337H8.16667C7.80443 2.33337 7.44716 2.41771 7.12317 2.57971C6.79917 2.74171 6.51734 2.97692 6.3 3.26671L3.96667 6.37821Z" stroke="#9810FA" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Shopping Experiences</h3>
+                    <p>Find the best local markets, artisan shops, fashion boutiques, and authentic African crafts based on what you're looking for.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Pure Joy</h3>
-                    <p>Experience moments of pure happiness without compromise or apology.</p>
+                    <div class="date feature-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M2.33331 11.0833C2.33334 9.78507 2.72717 8.51735 3.4628 7.44761C4.19843 6.37787 5.24125 5.55644 6.45352 5.09181C7.6658 4.62717 8.9905 4.54119 10.2527 4.84522C11.5148 5.14926 12.6551 5.829 13.5228 6.79467C13.5839 6.86002 13.6578 6.91212 13.7399 6.94774C13.822 6.98336 13.9105 7.00174 14 7.00174C14.0895 7.00174 14.178 6.98336 14.2601 6.94774C14.3421 6.91212 14.416 6.86002 14.4771 6.79467C15.3422 5.82272 16.4827 5.13727 17.7469 4.82954C19.0111 4.52181 20.3391 4.60641 21.554 5.07207C22.7689 5.53773 23.8133 6.36237 24.5479 7.43623C25.2826 8.51008 25.6728 9.78223 25.6666 11.0833C25.6666 13.755 23.9166 15.75 22.1666 17.5L15.7593 23.6985C15.5419 23.9482 15.2739 24.1487 14.973 24.2869C14.6722 24.425 14.3454 24.4975 14.0143 24.4996C13.6833 24.5017 13.3556 24.4333 13.053 24.299C12.7504 24.1647 12.4798 23.9676 12.2593 23.7207L5.83331 17.5C4.08331 15.75 2.33331 13.7667 2.33331 11.0833Z" stroke="#E60076" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Date Ideas</h3>
+                    <p>Get romantic restaurant recommendations, unique date activities, and special experiences perfect for your relationship vibe.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="mood feature-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M12.8532 3.28303C12.9032 3.0154 13.0452 2.77368 13.2546 2.59973C13.4641 2.42579 13.7277 2.33057 14 2.33057C14.2723 2.33057 14.5359 2.42579 14.7454 2.59973C14.9548 2.77368 15.0968 3.0154 15.1468 3.28303L16.373 9.76736C16.4601 10.2284 16.6841 10.6524 17.0159 10.9842C17.3476 11.3159 17.7717 11.5399 18.2327 11.627L24.717 12.8532C24.9846 12.9032 25.2263 13.0452 25.4003 13.2546C25.5742 13.4641 25.6695 13.7278 25.6695 14C25.6695 14.2723 25.5742 14.536 25.4003 14.7454C25.2263 14.9549 24.9846 15.0969 24.717 15.1469L18.2327 16.373C17.7717 16.4601 17.3476 16.6841 17.0159 17.0159C16.6841 17.3476 16.4601 17.7717 16.373 18.2327L15.1468 24.717C15.0968 24.9847 14.9548 25.2264 14.7454 25.4003C14.5359 25.5743 14.2723 25.6695 14 25.6695C13.7277 25.6695 13.4641 25.5743 13.2546 25.4003C13.0452 25.2264 12.9032 24.9847 12.8532 24.717L11.627 18.2327C11.5399 17.7717 11.3159 17.3476 10.9841 17.0159C10.6524 16.6841 10.2283 16.4601 9.76733 16.373L3.283 15.1469C3.01537 15.0969 2.77365 14.9549 2.5997 14.7454C2.42575 14.536 2.33054 14.2723 2.33054 14C2.33054 13.7278 2.42575 13.4641 2.5997 13.2546C2.77365 13.0452 3.01537 12.9032 3.283 12.8532L9.76733 11.627C10.2283 11.5399 10.6524 11.3159 10.9841 10.9842C11.3159 10.6524 11.5399 10.2284 11.627 9.76736L12.8532 3.28303Z" stroke="#F54900" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23.3333 2.33337V7.00004" stroke="#F54900" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.6667 4.66663H21" stroke="#F54900" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.66667 25.6667C5.95533 25.6667 7 24.622 7 23.3333C7 22.0447 5.95533 21 4.66667 21C3.378 21 2.33334 22.0447 2.33334 23.3333C2.33334 24.622 3.378 25.6667 4.66667 25.6667Z" stroke="#F54900" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Mood-Based Suggestions</h3>
+                    <p>Tell us how you're feeling and we'll recommend experiences that match your current energy and emotional state.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="location feature-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M23.3333 11.6667C23.3333 17.4919 16.8712 23.5585 14.7012 25.4322C14.499 25.5842 14.2529 25.6664 14 25.6664C13.7471 25.6664 13.501 25.5842 13.2988 25.4322C11.1288 23.5585 4.66666 17.4919 4.66666 11.6667C4.66666 9.19135 5.64999 6.81738 7.40033 5.06704C9.15067 3.3167 11.5246 2.33337 14 2.33337C16.4753 2.33337 18.8493 3.3167 20.5997 5.06704C22.35 6.81738 23.3333 9.19135 23.3333 11.6667Z" stroke="#00A63E" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 15.1666C15.933 15.1666 17.5 13.5996 17.5 11.6666C17.5 9.73363 15.933 8.16663 14 8.16663C12.067 8.16663 10.5 9.73363 10.5 11.6666C10.5 13.5996 12.067 15.1666 14 15.1666Z" stroke="#00A63E" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Location-Aware</h3>
+                    <p>Get recommendations based on your current location or plan experiences for your next African destination.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="event feature-icon icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M9.33331 2.33337V7.00004" stroke="#E17100" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.6667 2.33337V7.00004" stroke="#E17100" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22.1667 4.66663H5.83333C4.54467 4.66663 3.5 5.71129 3.5 6.99996V23.3333C3.5 24.622 4.54467 25.6666 5.83333 25.6666H22.1667C23.4553 25.6666 24.5 24.622 24.5 23.3333V6.99996C24.5 5.71129 23.4553 4.66663 22.1667 4.66663Z" stroke="#E17100" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.5 11.6666H24.5" stroke="#E17100" stroke-width="2.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Life Event Planning</h3>
+                    <p>Celebrating something special? We'll help you plan the perfect experience for birthdays, anniversaries, and milestones.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials-section" id="testimonials">
+            <h2>What Our Community Says</h2>
+            <p class="section-description">Join thousands of young explorers discovering the best of Africa</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"This chatbot is a game-changer! I was feeling stressed and wanted a quick getaway. It suggested a beautiful beach resort in Zanzibar that was perfect for my budget. Best weekend ever!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400" alt="Amara Okonkwo" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Amara Okonkwo, 28</h4>
+                            <p>Lagos, Nigeria</p>
+                            <span class="experience-badge">Travel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I needed date ideas and got amazing recommendations for rooftop restaurants I never knew existed. My girlfriend was so impressed! The AI really understood the romantic vibe I was going for."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Kwame Mensah" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Kwame Mensah, 32</h4>
+                            <p>Accra, Ghana</p>
+                            <span class="experience-badge">Dating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"As someone who loves authentic African fashion, the shopping recommendations were spot-on! Found incredible local designers and artisan markets I would have never discovered on my own."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="Zuri Kamau" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Zuri Kamau, 26</h4>
+                            <p>Nairobi, Kenya</p>
+                            <span class="experience-badge">Shopping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15,000+</div>
+                    <p>Recommendations Given</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.9/5</div>
+                    <p>Average Rating</p>
                 </div>
             </div>
         </section>
 
         <!-- PROMISE SECTION -->
         <section class="promise-section">
-            <h2>Our Promise</h2>
-            <p>We create intentional spaces where culture is celebrated, connections are genuine, and joy is non-negotiable. Afrohedonist is your gateway to experiences that feel like home.</p>
+            <h2>Ready to Discover Your Next African Adventure?</h2>
+            <p>Whether you're feeling spontaneous, romantic, or adventurous, our AI chatbot is here to help you find the perfect experience. Start chatting now—it's free!</p>
+            
+            <div class="promise-features">
+                <div class="promise-feature">
+                    <span class="check-icon">→</span>
+                    <span>Instant personalized recommendations</span>
+                </div>
+                <div class="promise-feature">
+                    <span class="check-icon">→</span>
+                    <span>Available 24/7 on WhatsApp</span>
+                </div>
+                <div class="promise-feature">
+                    <span class="check-icon">→</span>
+                    <span>No app download required</span>
+                </div>
+            </div>
         </section>
 
         <!-- CTA SECTION -->
         <section class="cta-section" id="cta">
             <h2>Ready to Celebrate?</h2>
-            <p>Join thousands discovering the joy of authentic cultural experiences</p>
-            <!-- Call to action button -->
-            <button class="btn btn-primary btn-large">Get started</button>
+            <p>Join thousands discovering authentic African experiences tailored to their vibe</p>
+            <button class="btn btn-primary btn-large cta-button">Get started</button>
 
             <section class="form-section">
                 <form action="https://formspree.io/f/mlgdrlpb" method="post" class="waitlist-form">
@@ -130,15 +359,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone Number*</label>
+                        <label for="phone">WhatsApp Number*</label>
                         <br>
-                        <input id="phone" name="phone" placeholder="Your phone number"></input>
+                        <input type="tel" id="phone" name="phone" placeholder="Your WhatsApp number" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email-list"></label>
-                        <br>
-                        <input type="checkbox" id="email-list" name="email-list" >  Add me to your email list</input>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="email-list" name="email-list">
+                        <label for="email-list">Add me to your email list</label>
                     </div>
 
                     <div class="form-actions">
@@ -154,99 +382,45 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Afrohedonist</h4>
+                <p class="footer-description">Your AI-powered guide to discovering authentic African experiences.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
                 <ul>
-                    <!-- Footer navigation links -->
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#demo">How it works</a></li>
+                    <li><a href="#how-it-works">How it works</a></li>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#cta">Contact</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Follow Us</h4>
+                <h4>Connect</h4>
                 <ul>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="mailto:hello@afrivibes.com">hello@afrohedonist.com</a></li>
+                    <li><a href="#">WhatsApp Support</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <!-- Copyright notice -->
-            <p>&copy; 2025 Afrohedonist. All Rights Reserved</p>
+            <p>&copy; 2026 Afrohedonist. All Rights Reserved</p>
         </div>
     </footer>
 
+    <script src="./script.js"></script>
     <script>
-        // Mobile menu toggle with accessibility and safety checks
-        const hamburger = document.getElementById('hamburger'); // Get the hamburger button
-        const navLinks = document.getElementById('navLinks'); // Get the navigation links
-
-        if (hamburger && navLinks) {
-            // Add click event to toggle the mobile menu
-            hamburger.addEventListener('click', function() {
-                const opened = navLinks.classList.toggle('active'); // Toggle the active class
-                hamburger.classList.toggle('active'); // Toggle the hamburger button state
-                hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false'); // Update aria attribute for accessibility
-            });
-
-            // Close the menu when a link is clicked
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active'); // Remove active class from nav links
-                    hamburger.classList.remove('active'); // Remove active class from hamburger
-                    hamburger.setAttribute('aria-expanded', 'false'); // Update aria attribute
-                });
-            });
-
-            // Close the menu when the Escape key is pressed
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    navLinks.classList.remove('active'); // Remove active class from nav links
-                    hamburger.classList.remove('active'); // Remove active class from hamburger
-                    hamburger.setAttribute('aria-expanded', 'false'); // Update aria attribute
-                }
-            });
-
-            /* Javasript to show form section after cta button is pressed */
-            const ctaButton = document.querySelector('.cta-section .btn');
-            const navButton = document.querySelector('.nav-btn');
-            const priButton = document.querySelector('.btn-primary');
-            const formSection = document.querySelector('.form-section');
-
-            ctaButton.addEventListener('click', function() {
-                formSection.classList.add('active');
-                ctaButton.style.display = 'none'; // Optional
-            });
-
-            priButton.addEventListener('click', function() {
-                formSection.classList.add('active');
-                ctaButton.style.display = 'none'; // Optional
-            });
-
-            navButton.addEventListener('click', function() {
-                formSection.classList.add('active');
-                ctaButton.style.display = 'none'; // Optional
-            });
-        }
+        feather.replace();
     </script>
 </body>
-<!--
-    FILE: index.html
-    DESCRIPTION: 
-    This is the main entry point HTML file for the Afrohedonist Marketing MVP (Minimum Viable Product) project.
-    It contains the basic structure and layout of the web application's landing page which can be refactored as a home page once the product is released.
--->
 </html>
