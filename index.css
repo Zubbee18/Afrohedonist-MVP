@@ -30,8 +30,6 @@ body {
     font-weight: normal;
     font-family: "Averta", "DM Sans", Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
 }
 
 /* ============ DESIGN TOKENS (COLOR VARIABLES) ============ */
@@ -52,6 +50,7 @@ body {
 body {
     background-color: var(--bg);
     color: var(--text);
+    display: block;
 }
 
 h2 {
@@ -449,8 +448,9 @@ main {
 /* ============ STEPS SECTION ============ */
 
 .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     margin: 4rem 2rem;
 }
@@ -461,6 +461,8 @@ main {
     border-radius: 12px;
     position: relative;
     text-align: center;
+    width: 100%;
+    max-width: 20rem;
     /* border: 2px solid #f0f0f0; */
     /* transition: all 0.3s ease; */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -512,7 +514,7 @@ main {
 
 /* ============ FEATURES SECTION ============ */
 .features-section {
-    max-width: 1300px;
+    max-width: 1200px;
     text-align: center;
     margin: 0 auto 4rem;
     padding: 4rem 2rem;
@@ -522,7 +524,6 @@ main {
     display: flex;
     gap: 2rem;
     margin-top: 3rem;
-    max-height: 38.4rem;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -534,9 +535,10 @@ main {
     border-radius: 1rem;
     text-align: center;
     border: 2px solid #f0f0f0;
-    width: 20.2rem;
-    height: 18rem;
-    /* transition: all 0.3s ease; */
+    width: 100%;
+    max-width: 20.2rem;
+    min-height: 18rem;
+    transition: all 0.3s ease;
 }
 
 /* Hoping to use this when there are links connected to the cards so that users can use it to get started */
@@ -599,11 +601,11 @@ main {
 }
 
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
-    max-width: 1200px;
     margin: 3rem auto;
+    justify-content: center;
 }
 
 .testimonial-card {
@@ -612,6 +614,7 @@ main {
     border-radius: 12px;
     border: 2px solid var(--orange-light);
     transition: all 0.3s ease;
+    max-width: 20rem;
 }
 
 .testimonial-text {
@@ -662,6 +665,7 @@ main {
 .stats-grid {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     max-width: 900px;
     margin: 0 auto;
@@ -691,8 +695,6 @@ main {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
     color: white;
     border-radius: 12px;
-    margin: 0 auto 3rem;
-    max-width: 1100px;
 }
 
 .promise-section h2 {
@@ -728,14 +730,25 @@ main {
     opacity: 0.8;
 }
 
+.promise-section, .cta-section {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 3rem;
+    max-width: calc(100% - 4rem);
+    width: 100%;
+}
+
+@media (min-width: 1532px) {
+    .promise-section, .cta-section {
+        max-width: 1500px;
+    }
+}
+
 /* ============ CTA SECTION ============ */
 .cta-section {
     text-align: center;
     padding: 3rem 2rem;
     background-color: var(--surface);
     border-radius: 12px;
-    margin: 0 auto 3rem;
-    max-width: 1100px;
 }
 
 .cta-section h2 {
@@ -876,9 +889,13 @@ footer {
         position: relative;
     }
 
+    .navbar .mobile-view-logo {
+        font-size: 3rem;
+    }
+
     .mobile-view-logo {
         display: inline;
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: 900;
         padding: 0.2rem;
     }
@@ -889,7 +906,8 @@ footer {
 
     .hamburger {
         display: flex;
-        margin-right: 1rem;
+        margin-right: 0;
+        order: 3;
     }
 
     .nav-links {
@@ -912,11 +930,17 @@ footer {
 
     .nav-btn {
         margin-left: auto;
-        margin-right: 0.2rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        order: 2;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .hero h2 {
@@ -931,6 +955,12 @@ footer {
         text-align: center;
     }
 
+    .demo-section,
+    .features-section,
+    .testimonials-section {
+        padding: 3rem 1.5rem;
+    }
+
     .demo-content h2,
     .features-section h2,
     .testimonials-section h2,
@@ -941,16 +971,12 @@ footer {
 
     .section-description {
         font-size: 1rem;
-        margin: 0 1rem 2rem 1rem;
     }
 
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .features-grid,
-    .testimonials-grid {
-        grid-template-columns: 1fr;
+    .promise-section,
+    .cta-section {
+        padding: 2.5rem 1.5rem;
+        max-width: calc(100% - 2rem);
     }
 
     .promise-features {
@@ -959,12 +985,17 @@ footer {
     }
 
     .chat-example {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .feature-card {
+    .feature-card,
+    .step-card,
+    .testimonial-card {
         width: 100%;
+        max-width: 100%;
+    }
+
+    .feature-card {
         height: auto;
         min-height: 15rem;
     }
@@ -973,27 +1004,33 @@ footer {
         max-height: none;
     }
 
-    .promise-section {
-        margin: 2rem;
-    }
-
-    .cta-section {
-        margin: 2rem;
+    .steps-grid {
+        margin: 3rem 1.5rem;
     }
 }
 
-/* Mobile Devices */
+/* Very Small Devices (Mobile phones in portrait) */
 @media (max-width: 480px) {
-    .navbar {
-        padding: 0.75rem;
-    }
-
-    .hero {
-        padding: 2rem 1rem;
+    .hero h1 {
+        font-size: 1.5rem;
     }
 
     .hero h2 {
-        font-size: 0.875rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-large {
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .chat-example {
+        grid-template-columns: 1fr;
     }
 
     .demo-section,
@@ -1002,51 +1039,35 @@ footer {
         padding: 2rem 1rem;
     }
 
+    .promise-section,
+    .cta-section {
+        padding: 2rem 1rem;
+        max-width: calc(100% - 1rem);
+    }
+
+    .steps-grid {
+        margin: 2rem 1rem;
+    }
+
+    .demo-content h2,
+    .features-section h2,
+    .testimonials-section h2,
+    .promise-section h2,
+    .cta-section h2 {
+        font-size: 1.5rem;
+    }
+
     h2 {
         font-size: 1.75rem;
     }
 
-    .section-description {
-        font-size: 0.95rem;
-        margin-bottom: 2rem;
-    }
-
-    .button-group {
-        gap: 0.75rem;
-    }
-
-    .btn {
-        padding: 0.625rem 1rem;
-        font-size: 0.95rem;
-    }
-
-    .btn-large {
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .step-card,
-    .testimonial-card {
+    .chat-interface {
         padding: 1.5rem;
     }
 
-    .promise-section {
-        padding: 2rem 1rem;
-    }
-
-    .promise-section p {
-        font-size: 1rem;
-    }
-
-    .promise-feature {
-        font-size: 1rem;
-    }
-
-    .stats-grid {
-        gap: 1rem;
-    }
-
-    .stat-number {
-        font-size: 2rem;
+    .step-card,
+    .feature-card,
+    .testimonial-card {
+        padding: 1.5rem;
     }
 }
