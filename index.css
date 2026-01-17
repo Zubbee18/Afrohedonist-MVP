@@ -1,18 +1,14 @@
 @font-face {
     font-family: 'Averta';
-    src: url('resources/fonts/Averta-Bold.woff2') format('woff2'),
-        url('resources/fonts/Averta-Bold.woff') format('woff'),
-        url('resources/fonts/Averta-Bold.ttf') format('truetype');
+    src: url('resources/fonts/Averta-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
-    font-display: fallback;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Averta';
-    src: url('resources/fonts/Averta-Regular.woff2') format('woff2'),
-        url('resources/fonts/Averta-Regular.woff') format('woff'),
-        url('resources/fonts/Averta-Regular.ttf') format('truetype');
+    src: url('resources/fonts/Averta-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -77,7 +73,7 @@ header {
     padding: 1rem 2rem;
     width: 100%;
     position: relative;
-    max-height: 76px;
+    min-height: 76px;
 }
 
 .nav-logo {
@@ -178,7 +174,7 @@ header {
 
 /* ============ MAIN CONTENT ============ */
 main {
-    max-width: 2000px;
+    max-width: 1600px;
     margin: 0 auto;
     background-color: #F7F5F3;
 }
@@ -187,10 +183,6 @@ main {
 .hero {
     text-align: center;
     padding: 4rem 2rem;
-    /* background: linear-gradient(rgba(255, 237, 213, 0.7), rgba(254, 215, 170, 0.5)),  */
-                /* url("https://images.unsplash.com/photo-1655720348590-c739c860beed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGFmcmljYW4lMjBmcmllbmRzfGVufDF8fHx8MTc2ODA3MTg0Nnww&ixlib=rb-4.1.0&q=80&w=1080"); */
-    background-size: cover;
-    background-position: center;
     position: relative;
 }
 
@@ -765,15 +757,21 @@ main {
 
 /* ============ FORM SECTION ============ */
 .form-section {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
     max-width: 600px;
     margin: 2rem auto 0;
     padding-top: 2rem;
     border-top: 2px solid #f0f0f0;
+    transition: visibility 0.3s, opacity 0.3s, height 0.3s;
 }
 
 .form-section.active {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
 }
 
 .form-group {
@@ -911,7 +909,7 @@ footer {
     }
 
     .nav-links {
-        display: none;
+        display: flex;
         position: absolute;
         top: 100%;
         left: 0;
@@ -922,10 +920,16 @@ footer {
         gap: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 999;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
     }
 
     .nav-links.active {
-        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-btn {
